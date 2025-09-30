@@ -1,3 +1,40 @@
 body {
-    background-color: rgb(60, 68, 68);
+    background-color: #1a1a1a;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: crimson;
+    margin-top: 20px;
+}
+
+.card {
+    background: #2e2e2e;
+    padding: 20px;
+    margin: 20px auto;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px red;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: crimson;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card button:hover {
+    background-color: red;
 }
