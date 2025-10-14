@@ -7,63 +7,10 @@
     <title>Blue Lock - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <style>
-        /* Tela de carregamento */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 71, 161, 0.95);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            z-index: 9999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.5s ease;
-        }
-
-        #loading-screen.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .loading-icon {
-            font-size: 3rem;
-            animation: spin 1.5s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Transição suave de entrada */
-        body {
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-
-        body.loaded {
-            opacity: 1;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Tela de carregamento -->
     <div id="loading-screen">
         <div class="loading-icon">⚽</div>
         <p class="mt-3">Carregando...</p>
@@ -124,6 +71,80 @@
             </div>
         </section>
 
+        <section id="personagens" class="mt-5 text-white">
+            <h2 class="mb-4 text-center">Personagens Principais</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card personagem-card bg-dark text-white h-100 shadow">
+                        <img src="images/yoichi" class="card-img-top" alt="Isagi Yoichi">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Isagi Yoichi</h5>
+                            <p class="card-text">Protagonista com grande leitura de jogo. Busca ser o maior artilheiro
+                                do mundo.</p>
+                            <a href="https://bluelock.fandom.com/wiki/Yoichi_Isagi"
+                                class="btn btn-outline-primary mt-auto">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card personagem-card bg-dark text-white h-100 shadow">
+                        <img src="images/rin" class="card-img-top" alt="Rin Itoshi">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Rin Itoshi</h5>
+                            <p class="card-text">Frio, técnico e altamente focado. Um dos rivais mais perigosos.</p>
+                            <a href="https://bluelock.fandom.com/wiki/Rin_Itoshi"
+                                class="btn btn-outline-primary mt-auto">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card personagem-card bg-dark text-white h-100 shadow">
+                        <img src="images/micael" class="card-img-top" alt="Michael Kaiser">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Michael Kaiser</h5>
+                            <p class="card-text">Estrela arrogante da liga alemã, combina talento e ego ao extremo.</p>
+                            <a href="https://bluelock.fandom.com/wiki/Michael_Kaiser"
+                                class="btn btn-outline-primary mt-auto">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card personagem-card bg-dark text-white h-100 shadow">
+                        <img src="images/nagi" class="card-img-top" alt="Nagi Seishiro">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Nagi Seishiro</h5>
+                            <p class="card-text">Gênio natural com controle de bola absurdo. Parece preguiçoso, mas é
+                                genial.</p>
+                            <a href="https://bluelock.fandom.com/wiki/Seishiro_Nagi"
+                                class="btn btn-outline-primary mt-auto">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card personagem-card bg-dark text-white h-100 shadow">
+                        <img src="images/baro" class="card-img-top" alt="Barou Shoei">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Barou Shoei</h5>
+                            <p class="card-text">Dominador, egoísta e poderoso. Autodenominado "Rei do Campo".</p>
+                            <a href="https://bluelock.fandom.com/wiki/Shoei_Baro"
+                                class="btn btn-outline-primary mt-auto">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card personagem-card bg-dark text-white h-100 shadow">
+                        <img src="images/bachira" class="card-img-top" alt="Bachira Meguru">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Bachira Meguru</h5>
+                            <p class="card-text">Criativo e imprevisível. Dribles inspirados na sua “voz interior”.</p>
+                            <a href="https://bluelock.fandom.com/wiki/Meguru_Bachira"
+                                class="btn btn-outline-primary mt-auto">Ver Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="informacoes" class="mb-5 text-white">
             <h2 class="mb-4">Sobre Blue Lock</h2>
             <div class="card bg-dark text-white p-4 shadow">
@@ -160,7 +181,7 @@
         <div class="nav-btn-container mt-4 text-center">
             <a id="goProdutos" href="produtos.html" class="btn btn-secondary btn-lg me-2">Ir para Produtos</a>
         </div>
- 
+
         <footer class="py-4 text-center text-white bg-dark mt-5">
             <p><strong>Site desenvolvido em 2025 para Atividade Final de DSA1</strong></p>
             <p>Turma: INF1GT</p>
@@ -187,7 +208,7 @@
 
             setTimeout(() => {
                 window.location.href = goProdutosBtn.href;
-            }, 1200); 
+            }, 1200);
         });
     </script>
 </body>
