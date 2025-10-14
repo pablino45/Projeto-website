@@ -1,0 +1,125 @@
+  body {
+            background: radial-gradient(circle at top, #001f3f, #000);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h2 {
+            color: #00aaff;
+            font-weight: bold;
+            text-shadow: 0 0 8px #00aaff;
+        }
+
+        .card-product {
+            background: #0b0b0b;
+            border: 2px solid #00aaff;
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card-product:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.7);
+        }
+
+        .card-title {
+            color: #00aaff;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: #ddd;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #222;
+            color: #00aaff;
+            border: 1px solid #00aaff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #00aaff;
+            color: #fff;
+        }
+
+        #cart {
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #00aaff;
+            padding: 20px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 600px;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+        }
+
+        #cart h4 {
+            text-align: center;
+            color: #00aaff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #00aaff;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .star {
+            font-size: 25px;
+            cursor: pointer;
+            color: gold;
+            transition: 0.2s;
+        }
+
+        .inactive {
+            color: gray;
+        }
+
+        .modal-content {
+            background-color: #0b0b0b;
+            color: #fff;
+            border: 2px solid #00aaff;
+        }
+
+        .form-select,
+        .form-control {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #00aaff;
+        }
+
+        .form-select option {
+            background-color: #000;
+        }
+
+        .btn-warning {
+            background-color: #ffaa00;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #ccc;
+            margin-top: 40px;
+            border-top: 1px solid #00aaff;
+        }
+
+        img.card-img-top {
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #00aaff;
+        }

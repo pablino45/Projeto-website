@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Blue Lock</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/produtos.css">
+</head>
+
+<body>
+    <main class="container py-5">
+        <h2 class="text-center mb-5">Produtos Blue Lock</h2>
+
+        <div class="row" id="product-list">
+            <div class="col-md-4 mb-4">
+                <div class="card card-product h-100">
+                    <img src="images/camiseta" class="card-img-top" alt="Camiseta Blue Lock" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Camiseta Blue Lock</h5>
+                        <p class="card-text">Camiseta oficial de Blue Lock, para torcedores e fãs do anime.</p>
+                        <p class="card-text fw-bold">Preço: R$ 59,90</p>
+                        <button class="btn btn-primary btn-buy buy-btn mt-auto"
+                            data-produto="Camiseta Blue Lock">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-product h-100">
+                    <img src="images/bone" class="card-img-top" alt="Boné Blue Lock" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Boné Blue Lock</h5>
+                        <p class="card-text">Boné estiloso com o logo de Blue Lock.</p>
+                        <p class="card-text fw-bold">Preço: R$ 39,90</p>
+                        <button class="btn btn-primary btn-buy buy-btn mt-auto"
+                            data-produto="Boné Blue Lock">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-product h-100">
+                    <img src="images/lorenzo" class="card-img-top" alt="Coleção de Mangás" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Coleção de Mangás</h5>
+                        <p class="card-text">Coleção completa dos volumes de Blue Lock.</p>
+                        <p class="card-text fw-bold">Preço: R$ 22,00 por volume</p>
+                        <button class="btn btn-primary btn-buy buy-btn mt-auto"
+                            data-produto="Coleção de Mangás">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-product h-100">
+                    <img src="images/bonecos" class="card-img-top" alt="Bonequinhos Blue Lock" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Bonequinhos Blue Lock</h5>
+                        <p class="card-text">Miniaturas colecionáveis dos jogadores de Blue Lock.</p>
+                        <p class="card-text fw-bold">Preço: R$ 49,90</p>
+                        <button class="btn btn-primary btn-buy buy-btn mt-auto"
+                            data-produto="Bonequinhos">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-product h-100">
+                    <img src="images/canecas" class="card-img-top" alt="Caneca Blue Lock" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Caneca Blue Lock</h5>
+                        <p class="card-text">Caneca temática de Blue Lock, perfeita para fãs do anime.</p>
+                        <p class="card-text fw-bold">Preço: R$ 34,90</p>
+                        <button class="btn btn-primary btn-buy buy-btn mt-auto"
+                            data-produto="Caneca Blue Lock">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary btn-back-home">Voltar para a Home</a>
+        </div>
+    </main>
+
+    <div id="cart" class="container my-5">
+        <h4 class="text-center mb-3">Carrinho</h4>
+        <div id="cart-items" class="mb-3"></div>
+        <p class="text-center"><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
+        <div class="text-center">
+            <button id="clear-cart" class="btn btn-warning btn-sm mt-2">Limpar Carrinho</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="purchaseForm" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="purchaseModalLabel">Comprar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p id="productName"></p>
+
+                    <div id="mangaVolumeSection" style="display: none;">
+                        <label for="volumeSelect" class="form-label">Escolha o volume do mangá:</label>
+                        <select id="volumeSelect" class="form-select">
+                            <option value="" disabled selected>Selecione um volume</option>
+                        </select>
+                        <p id="volumeName" class="mt-2"></p>
+                    </div>
+
+                    <div id="sizeSection" style="display: none;">
+                        <label for="sizeSelect" class="form-label">Escolha o tamanho:</label>
+                        <select id="sizeSelect" class="form-select">
+                            <option value="" disabled selected>Selecione um tamanho</option>
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <label for="quantityInput" class="form-label mt-3">Quantidade:</label>
+                    <input type="number" id="quantityInput" class="form-control" value="1" min="1" />
+
+                    <label class="form-label mt-3">Avaliação do produto:</label>
+                    <div id="starRating" class="mb-3">
+                        <span class="star inactive" data-star="1">&#9733;</span>
+                        <span class="star inactive" data-star="2">&#9733;</span>
+                        <span class="star inactive" data-star="3">&#9733;</span>
+                        <span class="star inactive" data-star="4">&#9733;</span>
+                        <span class="star inactive" data-star="5">&#9733;</span>
+                    </div>
+
+                    <input type="hidden" id="selectedRating" value="0" />
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 mt-5">
+        <p>© 2025 Loja Blue Lock — Todos os direitos reservados ⚽</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+        let selectedProduct = '';
+        let selectedRating = 0;
+        let cartItems = [];
+
+        const productPrices = {
+            'Camiseta Blue Lock': 59.9,
+            'Boné Blue Lock': 39.9,
+            'Coleção de Mangás': 22.0,
+            'Bonequinhos': 49.9,
+            'Caneca Blue Lock': 34.9
+        };
+
+        const MAX_VOLUMES = 35;
+        const volumeNames = {};
+        for (let i = 1; i <= MAX_VOLUMES; i++) {
+            volumeNames[i] = `Blue Lock Vol. ${i}`;
+        }
+
+        const stars = document.querySelectorAll('#starRating .star');
+        stars.forEach(star => {
+            star.addEventListener('mouseenter', () => highlightStars(parseInt(star.dataset.star)));
+            star.addEventListener('mouseleave', () => highlightStars(selectedRating));
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.star);
+                document.getElementById('selectedRating').value = selectedRating;
+                highlightStars(selectedRating);
+            });
+        });
+
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                const starValue = parseInt(star.dataset.star);
+                star.classList.toggle('inactive', starValue > rating);
+            });
+        }
+
+        document.querySelectorAll('.buy-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                selectedProduct = e.target.dataset.produto;
+                document.getElementById('productName').textContent = `Produto: ${selectedProduct}`;
+                document.getElementById('selectedRating').value = 0;
+                document.getElementById('quantityInput').value = 1;
+                highlightStars(0);
+
+                const mangaSection = document.getElementById('mangaVolumeSection');
+                const volumeSelect = document.getElementById('volumeSelect');
+                const volumeName = document.getElementById('volumeName');
+                const sizeSection = document.getElementById('sizeSection');
+                const sizeSelect = document.getElementById('sizeSelect');
+
+                mangaSection.style.display = 'none';
+                sizeSection.style.display = 'none';
+                volumeSelect.innerHTML = '<option value="" disabled selected>Selecione um volume</option>';
+                sizeSelect.value = '';
+
+                if (selectedProduct.toLowerCase().includes('mang')) {
+                    mangaSection.style.display = 'block';
+                    for (let i = 1; i <= MAX_VOLUMES; i++) {
+                        const opt = document.createElement('option');
+                        opt.value = i;
+                        opt.textContent = `Volume ${i}`;
+                        volumeSelect.appendChild(opt);
+                    }
+                    volumeName.textContent = '';
+                }
+
+                if (['camiseta', 'boné', 'bonequinho'].some(p => selectedProduct.toLowerCase().includes(p))) {
+                    sizeSection.style.display = 'block';
+                }
+
+                purchaseModal.show();
+            });
+        });
+
+        document.getElementById('volumeSelect').addEventListener('change', (e) => {
+            const vol = e.target.value;
+            document.getElementById('volumeName').textContent = volumeNames[vol]
+                ? `Título: ${volumeNames[vol]}`
+                : '';
+        });
+
+        document.getElementById('purchaseForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const quantity = parseInt(document.getElementById('quantityInput').value);
+            if (isNaN(quantity) || quantity < 1) {
+                alert('Informe uma quantidade válida.');
+                return;
+            }
+
+            const item = {
+                produto: selectedProduct,
+                avaliacao: selectedRating,
+                quantidade: quantity,
+                preco: productPrices[selectedProduct]
+            };
+
+            if (selectedProduct.toLowerCase().includes('mang')) {
+                const vol = document.getElementById('volumeSelect').value;
+                if (!vol) {
+                    alert('Por favor, selecione o volume do mangá.');
+                    return;
+                }
+                item.volume = vol;
+                item.tituloVolume = volumeNames[vol];
+            }
+
+            if (['camiseta', 'boné', 'bonequinho'].some(p => selectedProduct.toLowerCase().includes(p))) {
+                const size = document.getElementById('sizeSelect').value;
+                if (!size) {
+                    alert('Por favor, selecione o tamanho.');
+                    return;
+                }
+                item.tamanho = size;
+            }
+
+            cartItems.push(item);
+            updateCart();
+            purchaseModal.hide();
+        });
+
+        function updateCart() {
+            const cart = document.getElementById('cart');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItemsContainer.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cart.style.display = 'none';
+                return;
+            }
+
+            cart.style.display = 'block';
+            let total = 0;
+
+            cartItems.forEach((item, index) => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+
+                let extra = `
+                    Quantidade: ${item.quantidade}<br>
+                    Preço unitário: R$ ${item.preco.toFixed(2)}<br>
+                    Subtotal: R$ ${subtotal.toFixed(2)}<br>
+                `;
+                if (item.volume) {
+                    extra += `Volume: ${item.volume}<br>Título: ${item.tituloVolume}<br>`;
+                }
+                if (item.tamanho) {
+                    extra += `Tamanho: ${item.tamanho}<br>`;
+                }
+
+                const div = document.createElement('div');
+                div.classList.add('cart-item', 'border', 'p-2', 'mb-2', 'rounded');
+                div.innerHTML = `
+                    <strong>${item.produto}</strong><br>
+                    ${extra}
+                    Avaliação: ${generateStars(item.avaliacao)}<br>
+                    <button class="btn btn-danger btn-sm mt-1" data-index="${index}">Remover</button>
+                `;
+                cartItemsContainer.appendChild(div);
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+
+            document.querySelectorAll('#cart-items button').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = e.target.dataset.index;
+                    cartItems.splice(idx, 1);
+                    updateCart();
+                });
+            });
+        }
+
+        document.getElementById('clear-cart').addEventListener('click', () => {
+            cartItems = [];
+            updateCart();
+        });
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += i <= rating ? '&#9733;' : '&#9734;';
+            }
+            return `<span style="color:gold;">${stars}</span>`;
+        }
+    </script>
+</body>
+
+</html>
